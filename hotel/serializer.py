@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Guest, RoomType, Room, Amenity, RoomAmenity, Reservation, Payment
+from .models import Guest, RoomType, Room, Amenity, RoomAmenity, Reservation, Payment, VistaReservasCompletas
 
 
 class GuestSerializer(serializers.ModelSerializer):

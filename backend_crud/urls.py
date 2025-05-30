@@ -17,9 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
+from hotel.views import *
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('hotel.urls')),
     path('docs/', include_docs_urls(title='Hotel API Documentation')),
+    path('', ReservationListView.as_view(), name='reservation_list'),
+    path('new/', ReservationCreateView.as_view(), name='reservation_create'),
+    path('edit/<int:pk>/', ReservationUpdateView.as_view(), name='reservation_update'),
+    path('delete/<int:pk>/', ReservationDeleteView.as_view(), name='reservation_delete'),
 ]

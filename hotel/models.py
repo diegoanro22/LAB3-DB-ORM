@@ -88,3 +88,15 @@ class Payment(models.Model):
 
     def __str__(self):
         return f"Payment #{self.id} - {self.reservation}"
+
+class VistaReservasCompletas(models.Model):
+    guest_name = models.CharField(max_length=100)
+    room_type = models.CharField(max_length=50)
+    room_number = models.CharField(max_length=10)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    status = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False  # importante: no migrar esta vista
+        db_table = 'vista_reservas_completas'
