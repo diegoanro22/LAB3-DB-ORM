@@ -13,7 +13,7 @@ El sistema también integra una vista SQL (`VIEW`) para facilitar la visualizaci
 - Formulario interactivo con validaciones (fechas válidas, selección de huéspedes, etc.)
 - Vista consolidada (`vista_reservas_completas`) para mostrar información relacionada
 - Frontend sencillo basado en templates de Django + Bootstrap
-- API REST disponible para todas las entidades (opcional)
+- API REST disponible para todas las entidades 
 
 ---
 
@@ -58,7 +58,7 @@ cp .env.example .env
 
 5. **Crear y configurar la base de datos**
 
-Asegúrate de haber definido en tu archivo `.env` el nombre de la base de datos. Luego crea la base de datos manualmente desde tu gestor de base de datos favorito (por ejemplo, SQLite, PostgreSQL o MySQL), utilizando el nombre que definiste en el `.env`.
+Asegúrate de haber definido en tu archivo `.env` el nombre de la base de datos. Luego crea la base de datos manualmente desde tu gestor de base de datos favorito, utilizando el nombre que definiste en el `.env`.
 
 Después, ejecuta las migraciones para que Django cree la estructura base del proyecto:
 
@@ -95,11 +95,28 @@ python manage.py runserver
 A continuación se muestran capturas de pantalla que evidencian el funcionamiento del sistema:
 
 
-```markdown
+
+
+### 🧾 Listado de Reservas
 ![Listado de Reservas](screenshots/listado.png)
-![Formulario de Reserva](screenshots/create_1.png)
-![Creacion](screenshots/create_2.png)
-```
+
+---
+
+### ➕ Crear Reserva
+![Formulario Crear - Parte 1](screenshots/create_1.png)  
+![Formulario Crear - Parte 2](screenshots/create_2.png)
+
+---
+
+### ✏️ Editar Reserva
+![Formulario Editar - Parte 1](screenshots/edit_1.png)  
+![Formulario Editar - Parte 2](screenshots/edit_2.png)
+
+---
+
+### ❌ Eliminar Reserva
+![Eliminar Reserva - Confirmación 1](screenshots/delete_1.png)  
+![Eliminar Reserva - Confirmación 2](screenshots/delete_2.png)
 
 ---
 
