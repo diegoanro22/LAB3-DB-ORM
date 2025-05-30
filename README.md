@@ -22,7 +22,6 @@ El sistema también integra una vista SQL (`VIEW`) para facilitar la visualizaci
 - Python 3.10+
 - pip
 - Git
-- SQLite3 (por defecto) o cualquier otro gestor de base de datos compatible con Django
 
 ---
 
@@ -30,54 +29,57 @@ El sistema también integra una vista SQL (`VIEW`) para facilitar la visualizaci
 
 1. **Clonar el repositorio**
 
-\`\`\`bash
+```bash
 git clone https://github.com/usuario/LAB3-DB-ORM.git
 cd LAB3-DB-ORM
-\`\`\`
+```
 
 2. **Crear y activar un entorno virtual**
 
-\`\`\`bash
+```bash
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # Linux/macOS
 source venv/bin/activate
-\`\`\`
+```
 
 3. **Instalar dependencias**
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 4. **Crear archivo de entorno**
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
 5. **Crear y configurar la base de datos**
 
-\`\`\`bash
+Asegúrate de haber definido en tu archivo `.env` el nombre de la base de datos. Luego crea la base de datos manualmente desde tu gestor de base de datos favorito (por ejemplo, SQLite, PostgreSQL o MySQL), utilizando el nombre que definiste en el `.env`.
+
+Después, ejecuta las migraciones para que Django cree la estructura base del proyecto:
+
+```bash
 python manage.py migrate
-\`\`\`
+```
 
 6. **Insertar datos de prueba**
 
-\`\`\`bash
-# Abre tu gestor de base de datos o usa este comando si tienes SQLite instalado
-sqlite3 db.sqlite3 < data.sql
-sqlite3 db.sqlite3 < view.sql
-\`\`\`
+Una vez creada la base de datos y aplicadas las migraciones, abre tu gestor de base de datos y ejecuta el contenido de los siguientes archivos:
 
-> 🔹 Asegúrate de que los archivos `data.sql` (para poblar datos) y `view.sql` (para crear `vista_reservas_completas`) estén en la raíz del proyecto.
+- `data.sql` → para insertar registros de prueba.
+- `view.sql` → para crear la vista `vista_reservas_completas`.
+
+
 
 7. **Levantar el servidor**
 
-\`\`\`bash
+```bash
 python manage.py runserver
-\`\`\`
+```
 
 ---
 
@@ -85,26 +87,19 @@ python manage.py runserver
 
 - CRUD Web: http://localhost:8000/
 - Documentación API: http://localhost:8000/docs/
-- Panel de administración (si activas el superusuario): http://localhost:8000/admin/
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📸 Pruebas de funcionalidad
 
-\`\`\`
-hotel/
-├── migrations/
-├── templates/
-│   └── reservations/
-│       ├── index.html
-│       ├── form.html
-│       └── confirm_delete.html
-│   └── base.html
-├── models.py
-├── views.py
-├── forms.py
-├── serializers.py
-\`\`\`
+A continuación se muestran capturas de pantalla que evidencian el funcionamiento del sistema:
+
+
+```markdown
+![Listado de Reservas](screenshots/listado.png)
+![Formulario de Reserva](screenshots/create_1.png)
+![Creacion](screenshots/create_2.png)
+```
 
 ---
 
@@ -117,7 +112,7 @@ hotel/
 
 ## 🧑‍💻 Autor
 
-- Nombre:
+- Nombres: Diego Rosales y Fabián Morales
 - Universidad del Valle de Guatemala
 - Curso: cc3088 - Bases de Datos 1
 
